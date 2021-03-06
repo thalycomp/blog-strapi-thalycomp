@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  postgres_strapi:
+    container_name: strapi_blog
+    hostname: strapi_blog
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: dockerstrapiblog
+      POSTGRES_DB: blog-strapi
+      PGDATA: /var/lib/postgresq1/data/pgdata
+    volumes:
+        - ~/dockers/strapiblog:/var/lib/postgresq1/data/pgdata
+    ports:
+        - 5432:5432
